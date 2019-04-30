@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190428223835) do
+ActiveRecord::Schema.define(version: 20190430035939) do
 
   create_table "attendees", force: :cascade do |t|
     t.string   "first_name"
@@ -37,19 +37,18 @@ ActiveRecord::Schema.define(version: 20190428223835) do
   create_table "tables", force: :cascade do |t|
     t.string   "table_name"
     t.integer  "max_seats"
-    t.decimal  "total_gross"
     t.integer  "event_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_tables_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "email"
-    t.string   "password"
-    t.string   "username"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
