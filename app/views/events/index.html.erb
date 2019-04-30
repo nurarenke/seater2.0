@@ -2,6 +2,11 @@
 
 <ul>
 	<% @events.each do |event| %>
-  	<li><%= event.event_name %></li>
+  	<li>
+  		<strong><%= event.event_name %></strong>
+  		<%= event.event_description %>
+  		<%= event.location %>
+  		<%= event.date %>
+  	</li>
 	<% end %>
 </ul>
