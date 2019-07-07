@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome back, #{user.name}!"
       redirect_to user
     else
-      flash.now[:alert] = "Your password or emaild do not match. Please try again."
+      flash.now[:alert] = "Your password or email is invalid. Please try again."
       render :new
   end
 end
