@@ -10,6 +10,11 @@ class SessionsController < ApplicationController
     else
       flash.now[:alert] = "Your password or email is invalid. Please try again."
       render :new
+    end
   end
-end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url, notice: "You have been signed out"
+  end
 end
