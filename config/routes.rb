@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :tables
   root 'pages#home'
 
   resources :users do
-    resources :events
+    resources :events do
+      resources :attendees
+      resources :tables
+    end  
   end
   get 'signup' => 'users#new'
 
