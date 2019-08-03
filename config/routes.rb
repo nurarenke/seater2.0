@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  resources :events
 
-  resources :users
+  resources :users do
+    resources :events
+  end
   get 'signup' => 'users#new'
 
   resource :session

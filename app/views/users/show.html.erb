@@ -4,6 +4,9 @@
     <h2><%= @user.email %></h2>
   </header>
 </article>
+<div>
+	<%= link_to 'Your Events', user_events_path(@user) %>
+</div>
 <footer>
 	<nav>
 		<%= link_to 'Edit Account', edit_user_path(@user), class: 'button' %>
