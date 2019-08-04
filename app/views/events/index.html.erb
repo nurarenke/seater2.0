@@ -3,10 +3,12 @@
 <ul>
 	<% @events.each do |event| %>
   	<li>
-  		<strong><%= event.event_name %></strong>
-  		<%= event.event_description %>
-  		<%= event.location %>
-  		<%= event.date %>
+  		<strong><%= link_to event.event_name, user_event_path(current_user, event) %></strong>
+  		<ul>
+  			<li><%= event.event_description %></li>
+  			<li><%= event.location %></li>
+  			<li><%= event.date %></li>
+  		</ul>
   	</li>
 	<% end %>
 </ul>
