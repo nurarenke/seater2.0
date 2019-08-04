@@ -1,1 +1,14 @@
-<h1>Events</h1>
+<h1><%= @event.event_name %></h1>
+<h2>Attendees</h2>
+<ul>
+	<% @attendees.each do |attendee| %>
+  	<li>
+  		<strong><%= attendee.first_name %> <%= attendee.last_name %></strong>
+  		<ul>
+  			<li>Email: <%= attendee.email %></li>
+  			<li>VIP: <%= attendee.is_vip %></li>
+  			<li>Meal Request: <%= attendee.meal_request %></li>
+  		</ul>
+  	</li>
+	<% end %>
+</ul>
