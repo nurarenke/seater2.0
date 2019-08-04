@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :events do
-      resources :attendees
+      resources :attendees do 
+        collection { post :import }
+      end
       resources :tables
     end  
   end

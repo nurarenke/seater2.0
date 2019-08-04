@@ -3,13 +3,19 @@
 <ul>
 	<% @attendees.each do |attendee| %>
   	<li>
-  		<strong><%= attendee.first_name %> <%= attendee.last_name %></strong>
-  		<ul>
-  			<li>Email: <%= attendee.email %></li>
-  			<li>VIP: <%= attendee.is_vip %></li>
-  			<li>Meal Request: <%= attendee.meal_request %></li>
-  			<li>External ID: <%= attendee.external_id %></li>
-  		</ul>
+  		<tr>
+  			<td><strong><%= attendee.first_name %> <%= attendee.last_name %></strong></td>
+  			<td>Email: <%= attendee.email %></td>
+  			<td>VIP: <%= attendee.is_vip %></td>
+  			<td>Meal Request: <%= attendee.meal_request %></td>
+  			<td>External ID: <%= attendee.external_id %></td>
+  		</tr>
   	</li>
 	<% end %>
 </ul>
+
+<h2>Import Attendees</h2>
+<%= form_tag import_user_event_attendees_path(current_user, @event), multipart:true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import Attendees" %>
+<% end %>
