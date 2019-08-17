@@ -1,0 +1,10 @@
+<h2><%= @table.table_name %></h2>
+<ul>
+	<% @table_attendees.each do |attendee| %>
+  <li>
+    <tr>
+      <td><%= attendee.first_name %> <%= attendee.last_name %></td>
+    </tr>
+  </li>
+  <% end %>
+</ul>

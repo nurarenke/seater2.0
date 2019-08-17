@@ -25,7 +25,7 @@
   <% @tables.each do |table| %>
     <li>
       <tr>
-        <td><strong><%= table.table_name %></strong></td>
+        <td><strong><%= link_to table.table_name, user_event_table_path(current_user, @event.id, table.id) %></strong></td>
         <td>Max Seats: <%= table.max_seats %></td>
       </tr>
     </li>
