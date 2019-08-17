@@ -1,5 +1,5 @@
 <h1><%= @event.event_name %></h1>
-<h2>Attendees</h2>
+<h2>Attendees:</h2>
 <ul>
 	<% @attendees.each do |attendee| %>
   	<li>
@@ -19,3 +19,15 @@
 	<%= file_field_tag :file %>
 	<%= submit_tag "Import Attendees" %>
 <% end %>
+
+<h2>Tables:</h2>
+<ul>
+  <% @tables.each do |table| %>
+    <li>
+      <tr>
+        <td><strong><%= link_to table.table_name, user_event_table_path(current_user, @event.id, table.id) %></strong></td>
+        <td>Max Seats: <%= table.max_seats %></td>
+      </tr>
+    </li>
+  <% end %>
+</ul>
