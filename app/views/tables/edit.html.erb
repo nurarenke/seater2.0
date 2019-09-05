@@ -1,0 +1,13 @@
+<%= form_for([@user, @event, @table]) do |f| %>
+  <p>
+    <%= f.label :table_name %><br/>
+    <%= f.text_field :table_name %>
+  </p>
+  <p>
+    <%= f.label :max_seats %><br/>
+    <%= f.text_field :max_seats %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

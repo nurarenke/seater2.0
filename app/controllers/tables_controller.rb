@@ -4,4 +4,10 @@ class TablesController < ApplicationController
     @table = Table.find(params[:id])
     @event = Event.find(params[:event_id])
   end
+
+  def edit
+    @table = Table.find(params[:id])
+    @event = Event.find(params[:event_id])
+    @user = User.find(params[:id])
+  end
 end
