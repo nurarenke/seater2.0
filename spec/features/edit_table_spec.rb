@@ -15,7 +15,13 @@ describe "Editing a table" do
 
     expect(current_path).to eq(edit_user_event_table_path(user, event, table))
 
-    expect(find_field('Max Seats').value).to eq(table.max_seats)
+    expect(find_field('Table name').value).to eq(table.table_name)
+
+    fill_in 'Table name', with: "Updated Table Name"
+
+    click_button 'Update Table'
+
+    expect(current_path).to eq(user_event_table_path(user, event, table))
   end
 
 end
