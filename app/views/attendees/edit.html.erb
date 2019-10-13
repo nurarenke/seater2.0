@@ -31,3 +31,8 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<h1>Table Assignment</h1>
+<p>
+  Table Assigned: <%= link_to @table.table_name, user_event_table_path(current_user, @event.id, @table.id) %>
+</p>

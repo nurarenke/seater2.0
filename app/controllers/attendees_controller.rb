@@ -10,5 +10,6 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.find(params[:id])
     @event = Event.find(params[:event_id])
     @user = User.find(params[:id])
+    @table = Table.find(@attendee.table_id)
   end
 end
