@@ -3,13 +3,14 @@
 <ul>
 	<% @attendees.each do |attendee| %>
   	<li>
-  		<tr>
-  			<td><strong><%= attendee.first_name %> <%= attendee.last_name %></strong></td>
-  			<td>Email: <%= attendee.email %></td>
-  			<td>VIP: <%= attendee.is_vip %></td>
-  			<td>Meal Request: <%= attendee.meal_request %></td>
-  			<td>External ID: <%= attendee.external_id %></td>
-  		</tr>
+      <strong><%= attendee.first_name %> <%= attendee.last_name %></strong>
+      <%= link_to "Edit Attendee", edit_user_event_attendee_path(current_user, @event.id, attendee.id) %>
+      <ul>
+  			<li>Email: <%= attendee.email %></li>
+  			<li>VIP: <%= attendee.is_vip %></li>
+  			<li>Meal Request: <%= attendee.meal_request %></li>
+  			<li>External ID: <%= attendee.external_id %></li>
+      </ul>
   	</li>
 	<% end %>
 </ul>

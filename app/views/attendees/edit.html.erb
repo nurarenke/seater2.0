@@ -1,0 +1,33 @@
+<%= form_for([@user, @event, @attendee]) do |f| %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :email %><br/>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :is_vip %><br/>
+    <%= f.text_field :is_vip %>
+  </p>
+  <p>
+    <%= f.label :meal_request %><br/>
+    <%= f.text_field :meal_request %>
+  </p>
+  <p>
+    <%= f.label :note %><br/>
+    <%= f.text_field :note %>
+  </p>
+  <p>
+    <%= f.label :external_id %><br/>
+    <%= f.text_field :external_id %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
