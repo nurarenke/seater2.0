@@ -37,4 +37,15 @@
   Table Assigned: <%= link_to @table.table_name, user_event_table_path(current_user, @event.id, @table.id) %>
 </p>
 
-<h1>Create Relationships</h1>
+<h1>Relationships</h1>
+<div>
+  <ul>
+    <% @relationships.each do |relationship| %>
+      <li>
+        <ul>
+          <li> <%= relationship.relationship_code %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
