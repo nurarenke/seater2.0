@@ -1,0 +1,2 @@
+module SeatingRelationshipsHelper
+end

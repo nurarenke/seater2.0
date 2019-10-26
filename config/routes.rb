@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :seating_relationships
   root 'pages#home'
 
   resources :users do
